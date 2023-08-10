@@ -1,0 +1,10 @@
+@import 'header.scss';
+@import 'ItemListContainer.scss';
+// Importa la biblioteca completa de Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// O importa solo componentes específicos
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/_mixins';
+// ... Agrega otros estilos de Bootstrap que necesites
+@import 'global.scss';
