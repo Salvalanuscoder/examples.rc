@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
-export const useFetch = (url, id) => {
+export const useFetch = (url, arr = []) => {
   const [data, setData] = useState(null); 
 
   useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/')
+        fetch(url)           
             .then(resp => resp.json())
             .then(data => setData(data))
             .catch(err => console.log(err))
 
-  },[url, id])
+  }, arr) 
   return { data}
 };

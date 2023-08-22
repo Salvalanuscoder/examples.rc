@@ -1,4 +1,4 @@
-import "../../estilos/card.css"
+import "../../styles/card/card.css"
 
 const ItemCard = ({item}) =>{
      return(

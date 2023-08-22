@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useFetch } from "./useFetch";
-import { pedirDatos } from '../helpers/pedirDatos';
+import { pedirDatos } from '../../helpers/pedirDatos';
 
 export const useProducts = () => {
   const [products, setProducts] = useState([]); // Usar useState
   const [loading, setLoading] = useState(true); // Usar useState
 
   useEffect(() => {
-    pedirDatos(true);
+    setLoading(true);
 
-    fetch('https://pokeapi.co/api/v2/')
+    // fetch('https://pokeapi.co/api/v2/')
+    pedirDatos()
       .then(r => setProducts(r))
       .catch(e => console.log(e))
       .finally(() => {
-        setLoading(false);
+            setLoading(false);
       });
   }, []);
 
-  return { products, loading };
+  return { 
+    products, 
+    loading 
+};
 };
