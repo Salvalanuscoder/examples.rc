@@ -2,16 +2,19 @@ import React from 'react'
 import { useEffect, useState } from 'react' 
 
 
-function FetchData({url, children}) {
+function FetchData({url, children, setLoading,}) {
     const [data, setData] = useState(null); 
 
     useEffect(() => {
-          fetch(url)           
-              .then(resp => resp.json())
-              .then(data => setData(data))
-              .catch(err => console.log(err))
-  
-    }, []) 
+        const fetchData = async () => {
+            setLoading(true);
+            const res = await fetch(url);
+            setData(await res.json());
+            setLoading(false);
+            console.log(data.types.type)
+        }
+        fetchData();
+    }, [url]) 
 
   return (
     <>
@@ -20,4 +23,4 @@ function FetchData({url, children}) {
   )
 }
 
-export default FetchData
+export default FetchData;

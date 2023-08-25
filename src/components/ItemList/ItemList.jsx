@@ -1,7 +1,10 @@
 import ItemCard from "../ItemCard/ItemCard";
 
 
-const ItemList = ({productos}) => {
+const ItemList = ({ productos }) => {
+    if (!productos) {
+      return <div>Loading...</div>; // o algún indicador de carga
+    }
     return (
 
         <div className="catalogo-contenedor">
