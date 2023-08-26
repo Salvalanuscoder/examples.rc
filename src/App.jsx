@@ -16,12 +16,28 @@ import ItemList2, { Contacto2 } from './components/examples/hoc/itemList2';
 import ItemList3 from './components/examples/renderprops/itemList3';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { CartContext } from './context/CartContext'
 function App() {
   // const [productos, setproductos] = useState(0)
+const [cart, setCart] = useState([])
+console.log(cart)
+
+const addCart = (item) => {
+  setCart([...cart, item])
+}
+
+const isInCart = (id) =>{
+  return cart.some((item) => item.id === id
+)}
+
   return (
     <>
       <div>
-
+<CartContext.Provider value={{
+  cart,
+  addCart,
+  isInCart,
+}}>
         <BrowserRouter>
           <Header />
 
@@ -44,6 +60,8 @@ function App() {
           {/* <Post /> */}
           {/* <pokeList/> */}
         </BrowserRouter>
+  
+  </CartContext.Provider> 
       </div>
     </>
   )

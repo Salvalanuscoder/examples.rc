@@ -6,9 +6,10 @@ import { useEffect, useSate } from 'react'
 const Contacto = () => {
     // const { product } = useProducts()
     // console.log(product)
+   
 
     const clickear = () => {
-      console.log('click')
+      // console.log('click')
     }
 
     useEffect(() => {
