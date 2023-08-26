@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
+// import { pokeCard } from "./pokeCard"; 
 import FetchData from "./renderprops/FetchData";
 import getColorByType from "../../utils/GetColorByType";
 
@@ -8,6 +9,7 @@ const PokeApi = () => {
     const [id, setId] = useState(1);
     const [loading, setLoading] = useState(false);
     const [searchId, setSearchId] = useState(1);
+
     const handleNext = () => id < 151 && setId(id + 1);
     const handlePrev = () => id > 1 && setId(id - 1);
     const handleSearch = (e) => {

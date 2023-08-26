@@ -14,7 +14,7 @@ const PokeCard = ({pokemonUrl}) =>{
     }, [])
 
   return (
-    <div className='col-3 m-2'>
+    <div className='col-3 m-2 poke-card'>
 
     {
         //operador logico && AND
